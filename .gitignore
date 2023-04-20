@@ -1,0 +1,62 @@
+# Auto generated files
+[Dd]ebug/
+[Rr]elease/
+[Bb]uild/*
+*.d
+*.slo
+*.lo
+*.o
+*.obj
+*.suo
+*.tlog
+*.ilk
+*.log
+*.pdb
+*.idb
+*.iobj
+*.ipdb
+*.opensdf
+*.sdf
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Codelite
+.codelite
+
+# JetBrains
+.idea/
+cmake-build-*/
+
+# KDevelop
+*.kdev4
+
+# CMake
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Makefile
+cmake_install.cmake
+install_manifest.txt
+Testing
+
+# macOS
+*.DS_Store
+*.xcodeproj/
