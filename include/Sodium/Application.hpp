@@ -9,4 +9,6 @@ namespace Sodium {
 
         void Run();
     };
+
+    Application* CreateApplication();
 }

@@ -11,10 +11,6 @@ public:
     }
 };
 
-int main() {
-    Example* app = new Example();
-    app->Run();
-    delete app;
-
-    return 0;
+Sodium::Application* Sodium::CreateApplication() {
+    return new Example();
 }
