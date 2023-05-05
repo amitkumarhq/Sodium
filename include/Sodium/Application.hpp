@@ -1,12 +1,16 @@
 #pragma once
 
+#include "Core.hpp"
+
 namespace Sodium {
-    class Application {
+    class SOD_API Application {
       public:
         Application();
-
         virtual ~Application();
 
-        void Run();
+        void run();
     };
+
+    // To be defined in CLIENT
+    Application* createApplication();
 }
