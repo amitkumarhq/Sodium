@@ -11,10 +11,15 @@ target_include_directories(
     sodium PUBLIC ${PROJECT_ROOT_DIR}/include
 )
 
+# System libraries
+find_package(OpenGL REQUIRED)
+
 # Libraries
 target_link_libraries(
     sodium
+    PUBLIC OpenGL::GL
     PUBLIC spdlog::spdlog
+    PUBLIC glfw
 )
 
 # Place the lib and the executable in the bin/
