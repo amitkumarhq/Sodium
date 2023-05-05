@@ -1,15 +1,16 @@
 #pragma once
 
-#include <memory>
+#include "Core.hpp"
 
-#include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
+#include "spdlog/fmt/ostr.h"
+#include "spdlog/spdlog.h"
 
 namespace Sodium {
-    class Logger {
+    class SOD_API Logger {
       private:
-        static std::shared_ptr<spdlog::logger> s_CoreLogger;
-        static std::shared_ptr<spdlog::logger> s_ClientLogger;
+        static std::shared_ptr<spdlog::logger> coreLogger;
+        static std::shared_ptr<spdlog::logger> clientLogger;
 
       public:
         Logger();
@@ -19,17 +20,16 @@ namespace Sodium {
         static void init();
 
         inline static std::shared_ptr<spdlog::logger>& getCoreLogger() {
-            return s_CoreLogger;
+            return coreLogger;
         }
 
         inline static std::shared_ptr<spdlog::logger>& getClientLogger() {
-            return s_ClientLogger;
+            return clientLogger;
         }
     };
 }
 
 // Core log macros
-
 #define SOD_CORE_TRACE(...) ::Sodium::Logger::getCoreLogger()->trace(__VA_ARGS__)
 #define SOD_CORE_INFO(...)  ::Sodium::Logger::getCoreLogger()->info(__VA_ARGS__)
 #define SOD_CORE_WARN(...)  ::Sodium::Logger::getCoreLogger()->warn(__VA_ARGS__)
@@ -37,7 +37,6 @@ namespace Sodium {
 #define SOD_CORE_FATAL(...) ::Sodium::Logger::getCoreLogger()->fatal(__VA_ARGS__)
 
 // Client log macros
-
 #define SOD_TRACE(...) ::Sodium::Logger::getClientLogger()->trace(__VA_ARGS__)
 #define SOD_INFO(...)  ::Sodium::Logger::getClientLogger()->info(__VA_ARGS__)
 #define SOD_WARN(...)  ::Sodium::Logger::getClientLogger()->warn(__VA_ARGS__)

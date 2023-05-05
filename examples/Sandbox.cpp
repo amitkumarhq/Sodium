@@ -1,7 +1,7 @@
 #include <Sodium.h>
 
 class Example : public Sodium::Application {
-public:
+  public:
     Example() {
         // ...
     }
@@ -11,6 +11,6 @@ public:
     }
 };
 
-Sodium::Application* Sodium::CreateApplication() {
+Sodium::Application* Sodium::createApplication() {
     return new Example();
 }

@@ -3,6 +3,5 @@
 #include "Sodium/Application.hpp"
 #include "Sodium/Logger.hpp"
 
-// ---------- ENTRY POINT ----------
-
-#include "Sodium/Main.h"
+// ENTRY POINT
+#include "Sodium/EntryPoint.hpp"
